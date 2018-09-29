@@ -1,0 +1,293 @@
+body {
+    background-color: #EEE;
+    font-family: sans-serif;
+}
+
+header {
+    display: grid;
+    grid-template-rows: 1fr 2rem;
+    grid-template-areas: 
+        "title difficulty playBtn"
+        ". message .";
+    justify-items: center;
+    align-items: center;
+    padding: 2rem 3rem;
+    padding-top: 1.6rem;
+    color: darkgreen;
+}
+
+h1 {
+    margin: 0;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 2px;
+    grid-area: title;
+}
+
+.mobile {
+    display: none;
+}
+
+select#difficulty {
+    font-size: 1rem;
+    width: 20vw;
+    height: 2rem;
+    grid-area: difficulty;
+}
+
+.play {
+    background-color: darkgreen;
+    color: #FFF;
+    font-weight: bold;
+    padding: 5px 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+    width: 11vw;
+    height: 2rem;
+    grid-area: playBtn;
+}
+
+.play:hover {
+    opacity: 0.8;
+}
+
+.saveBtn {
+    background-color: darkgreen;
+    color: #FFF;
+    font-weight: bold;
+    padding: 5px 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+    position: relative;
+    left: 20px;
+    bottom: 4px;
+}
+
+.saveBtn:hover {
+    opacity: 0.8;
+}
+
+#app {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-row-gap: 2.5rem;
+    
+    background-color: #FFF;
+    width: 80%;
+    border: 1px solid #000;
+    margin: 0 auto;
+    padding: 10px 25px;
+}
+
+#msg-box {
+    font-size: 1.25rem;
+    font-weight: 600;
+    grid-area: message;
+}
+
+.pics {
+    width: 60%;
+    height: auto;
+    border: 1px solid #000;
+    background-color: #CCC;
+    padding: 10px;
+    background-clip: content-box;
+    border-radius: 3px;
+    justify-self: center;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 20px;
+    margin-bottom: 20px;
+}
+
+footer span {
+    display: flex;
+    justify-content: center;
+    color: darkgreen;
+    letter-spacing: 3px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+footer p {
+    margin: 0 10px;
+}
+
+
+@media screen and (max-width: 950px) {
+    header {
+        padding: 1rem 2rem;
+        padding-top: 0.8rem;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    select#difficulty, .play, footer  {
+        font-size: 0.8rem;
+    }
+    
+    #msg-box {
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 883px) {
+    footer {
+        flex-direction: column;
+    }
+    
+    .saveBtn {
+        width: 30%;
+        margin: 0 auto;
+        left: 0;
+        top: 25px;
+        display: block;
+    }
+    
+    #timer-box {
+        position: relative;
+        top: 11px;
+    }
+}
+
+@media screen and (max-width: 724px) {
+    footer {
+        flex-direction: column;
+    }
+    
+    #score-box {
+        display: grid;
+        grid-template-columns: repeat(2, 40%);
+        grid-template-rows: repeat(2, 1fr);
+        grid-row-gap: 7px;   
+        flex-basis: 100%;
+        font-size: 1.2em;
+    }
+    
+    #timer-box {
+        margin-top: 7px;
+        font-size: 1.2em;
+    }
+    
+    .saveBtn {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    h1 {
+        font-size: 1.2rem;
+    }
+    
+    select#difficulty {
+        width: 23vw;
+    }
+    
+    .play {
+        width: 13vw;
+        height: 1.6rem;
+    }
+    
+    footer span {
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    header {
+        padding: 1rem 2rem;
+    }
+    
+    h1 {
+        font-size: 1.1rem;
+    }
+    
+    select#difficulty {
+        font-size: 0.7rem;
+    }
+    
+    .play {
+        width: 14vw;
+    }
+    
+
+}
+
+@media screen and (max-width: 405px) {
+    header {
+        padding-bottom: 6px;
+        grid-template-rows: repeat(3, .5fr);
+        grid-template-areas: 
+        "title . difficulty"
+        ". playBtn ."
+        ". message .";
+    }
+    
+    h1 {
+        grid-area: title;
+    }
+    
+    select#difficulty {
+        grid-area: difficulty;
+        width: 25vw;
+    }
+    
+    .play {
+        font-size: 0.7rem;
+        width: 16vw;
+        grid-area: playBtn;
+    }
+    
+    #msg-box {
+        grid-area: message;
+    }
+    
+    #score-box {
+        grid-template-columns: 1fr;
+        font-size: 1em;
+    }
+    
+    footer {
+        top: 12px;
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (max-width: 370px) {
+    header {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            'title'
+            'difficulty'
+            'playBtn'
+            'message';   
+        grid-gap: 4px;
+    }
+    
+    select#difficulty {
+        width: 35vw;
+    }
+    
+    .large {
+        display: none;
+    }
+    
+    .mobile {
+        display: block;
+    }
+    
+    .play {
+        width: 35vw;
+    }
+    
+    #timer-box {
+        font-size: 1em;
+    }
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="css/memory.css">
+    <script src="js/memoryGame.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1 class="large">Memory<br>Game</h1>
+        <h1 class="mobile">Memory Game</h1>
+        <select id="difficulty">
+            <option value="-1">Choose Level</option>
+            <option value="12">Novice (12 pairs)</option>
+            <option value="18">Intermediate (18 pairs)</option>
+            <option value="24">Professional (24 pairs)</option>
+            <option value="30">Ninja (30 pairs)</option>
+        </select>
+        
+        <button class="play">PLAY</button>
+        
+        <div id="msg-box"></div>    
+    </header>   
+
+    <div id="app"></div>
+    
+    <footer>
+        <span id="score-box" class="score-box">
+            <p>Attempts: 0</p>
+            <p>Matches: 0</p>
+            <p>Average: 0.000</p>
+            <p>Score: 0</p>
+        </span>
+        
+        <span id="timer-box" class="timer-box" style="color:red">&nbsp;00:00</span>  
+    </footer>
+    
+    <script>
+        const picsArr = ['anchor', 'apple', 'barn', 'baseball', 'basketball-player', 'boxer', 'car', 'cat', 'cowboy-boot', 'duck', 'eagle', 'fish', 'golden-anchor', 'grapes', 'horse', 'house', 'jumping-horse', 'jumping', 'key', 'keys', 'lion', 'monster-truck', 'motorcycle', 'pocket-watch', 'scissors', 'seahorse', 'shark', 'shoe', 'slamdunk', 'stopwatch', 'wagon-wheel', 'wheel'];
+        
+        const memory = new MemoryGame('app', picsArr);
+    </script>
+</body>
+</html>
